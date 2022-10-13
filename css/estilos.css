@@ -1,0 +1,240 @@
+*{box-sizing: border-box ;}
+
+/* CSS Reset (removendo espaçamento padrão dos elementos indicados) */
+body,h1,h2,p,figure{
+    margin: 0;
+    padding: 0;
+}
+
+img{max-width: 100%;}
+
+body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+
+a{text-decoration: none;
+color: blue;}
+
+header{
+    text-align: center;
+    height: 100px;
+}
+
+h1,nav{ text-transform: uppercase;}
+
+h1{ font-size: 25px;}
+
+h1 a{
+    background-color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 5px;
+    padding: 5px 15px  ;
+    color: white;
+    font-weight: normal;
+}
+
+nav{
+    margin-top: 10px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav a{ 
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    transition: 0.5s;
+}
+nav a:hover, nav a:focus{
+    background-color: rgb(192, 188, 188);
+}
+
+.destaque{
+    background-image: url(../imagens/fundo-destaque.jpg);
+    height: 500px;
+    color: white;
+    text-align: center;
+
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+ /* Alinhando todos os itens juntos, como um conteúdo só (e assim, evitando espsaços entre eles) */
+    align-content: center;
+}
+
+.destaque h2 {
+    font-size: 64px;
+    animation-name: aparecer;
+    animation-duration: 2s;
+}
+
+.destaque p{
+    font-size: 32px;
+    font-weight: bold;
+    animation-name: aparecer;
+    animation-duration: 2s;
+
+    /* Atraso no início da animação */
+    animation-delay: 2s;
+
+    /* Faz com que o texto já comece transparente(opacidade 0) após o delay */
+    animation-fill-mode:backwards;
+}
+
+/* Regras de animação */
+@keyframes aparecer{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+article h2{
+    text-align: center;
+    padding: 20px;
+}
+article p{
+    padding: 5px 10px;
+}
+figure{
+    padding: 0 10px;
+    text-align: center;
+}
+.historia{
+    background-image: url(../imagens/fundo-madeira.jpg);
+    background-attachment: fixed;
+    color: white;
+    text-shadow: black 1px 1px 3px;
+    text-align: center;
+}
+.historia iframe{
+    width: 100%;
+    max-width: 650px;
+}
+.localizacao{text-align: center;}
+
+.localizacao iframe{width: 100%;}
+
+footer{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.conteudo{
+    background-color:lavender;
+    border-radius: 10px;
+}
+
+table, td, th{
+    border: solid 2px black;
+    /* Remove espaçamento entre as bordas */
+    border-collapse: collapse;
+}
+
+table{
+    margin: auto;
+    width: 80%;
+}
+
+th, td{padding: 10px;}
+
+tr{ background-color: rgb(82, 151, 219);}
+
+/* odd(ímpar)   even(par) */
+tr:nth-child(odd){ background-color: rgb(176, 194, 228);}
+
+th{
+    background-color:black;
+    color: white;
+}
+/* Pseudo-classes: nth-child(2/3/4 - células do meio), first-child, last-child */
+td:first-child{text-transform: uppercase;}
+td:nth-child(2){ text-align: center;}
+td:last-child{text-align: center; font-weight: bold;}
+
+.redondo {
+    border-radius: 100%;
+    box-shadow: rgba(0, 0, 0, 0.521) 0 0 10px;
+    transition: 2s;
+    transform: scale(0.8);
+}
+.redondo:hover {transform: scale(1);}   
+
+/* Regras para formulários */
+
+form {
+    background-color:blanchedalmond;
+    width: 90%;
+    margin: auto;
+    padding: 16px;
+    border-radius: 10px;
+}
+#nome, #email, #nascimento, #assunto, #mensagem, #telefone{
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+}
+#mensagem{height: auto;}
+
+#assunto { background-color: white;}
+
+input, label{
+    margin-top: 8px;
+}
+
+button{
+    border: none;
+    background-color:orangered;
+    color:black;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+button:hover, button:focus{background-color: darksalmon;}
+
+    
+    
+/* Regras Condicionais usando Media Queries */
+
+@media screen and (min-width: 530px){
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+}
+    h1{ margin-left: 2vw;}
+    nav{ 
+        margin-right: 2vw;
+        margin-top: 0;}
+}
+
+@media screen and (min-width:800px){
+
+    h1 {font-size: 30px;}
+
+    header {height: 85px;}
+
+    nav{ width: 70%;}
+
+    nav a{ padding: 20px;}
+
+    .destaque{ height: 550px;}
+
+    p{ font-size: 20px;}
+}
+@media screen and (min-width:1000px){
+    .limitador{
+        max-width: 1000px;
+        margin: auto;
+}
+}
+
